@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 
+
 const routes: Routes = [
   {
     path: 'tabs',
@@ -35,15 +36,33 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'news',
+        children: [
+          {
+            path: '',
+            loadChildren: '../news/news.module#NewsPageModule'
+          }
+        ]
+      },
+      {
+        path: 'news-detail',
+        children: [
+          {
+            path: '',
+            loadChildren: '../news-detail/news-detail.module#NewsDetailPageModule'
+          }
+        ]
+      },
+      {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/news',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/news',
     pathMatch: 'full'
   }
 ];
