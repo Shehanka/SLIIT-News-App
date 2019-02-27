@@ -8,9 +8,9 @@ import { NewsService } from '../service/news.service';
 })
 export class NewsDetailPage implements OnInit {
 
-  constructor(private newsService : NewsService) { }
+  constructor(private newsService: NewsService) { }
 
-  article : any;
+  article: any;
 
   ngOnInit() {
     this.article = this.newsService.currentNews;
