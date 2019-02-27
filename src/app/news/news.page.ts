@@ -14,7 +14,7 @@ export class NewsPage implements OnInit {
   ngOnInit() {
     this.newsService.getNews('everything?q=cricket&from=2019-02-22&sortBy=publishedAt').subscribe(
       data => { this.data = data; console.log(JSON.stringify(this.data)); }
-    )
+    );
   }
   goToSinglePage(news) {
     this.newsService.currentNews = news;
